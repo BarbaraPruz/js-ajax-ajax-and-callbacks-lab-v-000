@@ -1,6 +1,6 @@
 function displayCommits(ev) {
   const commits = JSON.parse(this.responseText);
-  console.log("display commits",responseText);
+  console.log("display commits",commits);  // ToDo: commitInfo.author.login may not be avail...
   const commitsList = `<ul>${commits
      .map(
        commitInfo =>
@@ -16,8 +16,8 @@ function displayCommits(ev) {
 }
 
 function showCommits(el) {
-  const repo = el.dataset.repo;
-  const user = el.dataset.user;
+  const repo = el.dataset.repository;
+  const user = el.dataset.owner;
   const req = new XMLHttpRequest();
   req.addEventListener('load', displayCommits);
   console.log("Show commits for ",`https://api.github.com/repos/${user}/${repo}/commits`);
@@ -26,7 +26,6 @@ function showCommits(el) {
 }
 function handleSearchResults(response) {
   const repos = response.items;
-  console.log ("Search Results", repos);
   const repoList = `<ul>${repos
        .map(
          repo =>
@@ -34,7 +33,7 @@ function handleSearchResults(response) {
            '<strong>' +  repo.name + '</strong> -' +
            repo.description + '<br>' +
            '<a href="' + repo.html_url + '">' + repo.html_url + '</a>' + '<br>' +
-           '<a href="#" data-repo=' + repo.name + '" data-user="' + repo.owner.login + '">Show Commits</a>' +
+           '<a href="#" onclick="showCommits(this)" data-repository="' + repo.name + '" data-owner="' + repo.owner.login + '">Show Commits</a>' +
            '</li>'
        )
        .join('')}</ul>`;
