@@ -8,7 +8,8 @@ function displayCommits(ev) {
          commitInfo.author.login + ' - ' +
          commitInfo.commit.author.name +
          '</strong> - ' +
-         commitInfo.commit.message +
+         '<img href ="' + commitInfo.author.avatar_url + '">' +
+         commitInfo.commit.sha +
          '</li>'
      )
      .join('')}</ul>`;
