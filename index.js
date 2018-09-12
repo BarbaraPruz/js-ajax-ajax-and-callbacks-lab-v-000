@@ -9,7 +9,7 @@ function displayCommits(ev) {
          commitInfo.commit.author.name +
          '</strong> - ' +
          '<img src ="' + commitInfo.author.avatar_url + '">' +
-         commitInfo.commit.sha +
+         commitInfo.sha +
          '</li>'
      )
      .join('')}</ul>`;
