@@ -20,7 +20,6 @@ function showCommits(el) {
   const user = el.dataset.owner;
   const req = new XMLHttpRequest();
   req.addEventListener('load', displayCommits);
-  console.log("Show commits for ",`https://api.github.com/repos/${user}/${repo}/commits`);
   req.open('GET', `https://api.github.com/repos/${user}/${repo}/commits`);
   req.send();
 }
