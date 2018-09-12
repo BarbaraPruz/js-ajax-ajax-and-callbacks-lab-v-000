@@ -3,7 +3,7 @@ function displayError(error) {
  document.getElementById("errors").innerHTML = "error";
 }
 
-function displayCommits(ev) {
+function displayCommits(response) {
   console.log("displayCommits",response);
   // const commits = JSON.parse(this.responseText);
   // console.log("display commits",commits);  // ToDo: commitInfo.author.login may not be avail...
