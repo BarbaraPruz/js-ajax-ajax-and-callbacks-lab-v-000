@@ -3,23 +3,21 @@ function displayError(error) {
  document.getElementById("errors").innerHTML = "error";
 }
 
-function displayCommits(response) {
-  console.log("displayCommits",response);
-  // const commits = JSON.parse(this.responseText);
-  // console.log("display commits",commits);  // ToDo: commitInfo.author.login may not be avail...
-  // const commitsList = `<ul>${commits
-  //    .map(
-  //      commitInfo =>
-  //        '<li><strong>' +
-  //        commitInfo.author.login + ' - ' +
-  //        commitInfo.commit.author.name +
-  //        '</strong> - ' +
-  //        '<img src ="' + commitInfo.author.avatar_url + '">' +
-  //        commitInfo.sha +
-  //        '</li>'
-  //    )
-  //    .join('')}</ul>`;
-  //  document.getElementById('details').innerHTML = commitsList;
+function displayCommits(commits) {
+  console.log("display commits",commits);  // ToDo: commitInfo.author.login may not be avail...
+  const commitsList = `<ul>${commits
+    .map(
+      commitInfo =>
+        '<li><strong>' +
+        commitInfo.author.login + ' - ' +
+        commitInfo.commit.author.name +
+        '</strong> - ' +
+        '<img src ="' + commitInfo.author.avatar_url + '">' +
+        commitInfo.sha +
+        '</li>'
+    )
+   .join('')}</ul>`;
+  document.getElementById('details').innerHTML = commitsList;
 }
 
 function showCommits(el) {
