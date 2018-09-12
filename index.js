@@ -1,5 +1,6 @@
 function displayError(error) {
-    document.getElementById("errors").innerHTML = error.statusText;
+//    document.getElementById("errors").innerHTML = error.statusText;
+ document.getElementById("errors").innerHTML = "error";
 }
 
 function displayCommits(ev) {
