@@ -4,7 +4,7 @@ function displayError(error) {
 }
 
 function displayCommits(commits) {
-  console.log("display commits",commits);  // ToDo: commitInfo.author.login may not be avail...
+  // ToDo: commitInfo.author.login may not be avail...
   const commitsList = `<ul>${commits
     .map(
       commitInfo =>
